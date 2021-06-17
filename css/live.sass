@@ -1,0 +1,147 @@
+.live 
+    margin-top: 100px
+    min-height: 70vh
+    padding: 100px 0
+    .container
+        display: flex
+        flex-flow: row wrap
+        align-items: center
+        justify-content: center
+        .main-text
+            margin-bottom: 15px
+            h1
+                position: relative
+                text-align: center
+                font-family: $f-koushan
+                font-size: 2rem
+                color: white
+                display: block
+                margin-bottom: 20px
+                &::before
+                    position: absolute
+                    content: ''
+                    bottom: -5px
+                    left: 50%
+                    width: 200px
+                    height: 5px
+                    transform: skewX(60deg) translate(-50%, 0)
+                    background: $orange
+                span
+                    font-family: $f-reggae
+                    color: $orange
+            p
+                font-family: $f-koushan
+                font-size: 17px
+                color: white
+                text-align: center
+                margin-bottom: 60px
+        .content-vid
+            width: 100%
+            max-width: 700px
+            margin: 50px 10px
+            form
+                display: flex
+                align-items: center
+                flex-direction: column
+                justify-content: center
+                position: relative
+                .input
+                    display: block
+                    width: 100%
+                    max-width: 450px
+                    font-size: 15px
+                    font-family: $f-reggae
+                    padding: 12px
+                    border: 2px solid white
+                    color: $orange
+                    border: none
+                    outline: none
+                    opacity: 0.8
+                    transition: .6s ease all
+                    &:focus
+                        opacity: 1
+                    &:valid
+                        background: $orange
+                        color: white
+                        opacity: 1
+                    // &:valid ~ .valid
+                    //     display: block
+                    //     opacity: 1
+                    // &:invalid ~ .invalids
+                    //     display: block
+                        opacity: 1
+                .invalid
+                    position: absolute
+                    bottom: -30px
+                    left: 0
+                    width: 100%
+                    display: none
+                    color: $orange
+                    opacity: 0
+                    transition: opacity .6s .5s ease
+                .valid
+                    position: absolute
+                    bottom: -30px
+                    left: 0
+                    width: 100%
+                    display: none
+                    color: #00af34
+                    opacity: 0
+                    transition: opacity .6s .5s ease
+                .active
+                    display: block
+                    opacity: 1
+                .btn
+                    display: block
+                    width: 120px
+                    font-size: 15px
+                    text-align: center
+                    color: white
+                    padding: 10px
+                    margin: 20px auto
+                    border: 2px solid white
+                    cursor: pointer
+                    transition: .6s ease all
+                    &:hover
+                        background: $orange
+                        border: 2px solid $orange
+        video
+            display: block
+            width: 95%
+            max-width: 700px
+            min-height: 300px
+            height: 100%
+            background: white
+
+@media (min-width: 400px)
+    .live
+        .container
+            .main-text
+                h1
+                    font-size: 3rem
+
+@media (min-width: 768px)
+    .live
+        .container
+            .content-vid
+                form
+                    flex-direction: row
+                    justify-content: space-between
+                    .btn
+                        margin: 0
+            .main-text
+                h1
+                    font-size: 4rem
+                p
+                    display: block
+                    width: 100%
+                    max-width: 650px
+                    font-size: 19px
+                    margin: auto
+
+@media (min-width: 992px)
+    .live
+        .container
+            .main-text
+                p
+                    font-size: 20px

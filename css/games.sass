@@ -1,0 +1,292 @@
+.games
+    padding: 50px 10px
+    background: $dark2
+    .container
+        .main-text
+            margin-bottom: 15px
+            h1
+                position: relative
+                text-align: center
+                font-family: $f-koushan
+                font-size: 2rem
+                color: white
+                display: block
+                margin-bottom: 20px
+                &::before
+                    position: absolute
+                    content: ''
+                    bottom: -5px
+                    left: 50%
+                    width: 200px
+                    height: 5px
+                    transform: skewX(60deg) translate(-50%, 0)
+                    background: $orange
+                span
+                    font-family: $f-reggae
+                    color: $orange
+            p
+                font-family: $f-koushan
+                font-size: 17px
+                color: white
+                text-align: center
+        .box-games
+            display: flex
+            flex-flow: row wrap
+            align-items: center
+            justify-content: center
+            margin: 40px auto
+            .game
+                width: 100%
+                display: flex
+                flex-direction: column
+                background: $dark
+                max-width: 400px
+                color: white
+                margin: 15px auto
+                border-radius: 3px
+                .c-img
+                    position: relative
+                    overflow: hidden
+                    transition: .6s ease all
+                    &:hover .shw
+                        height: 120%
+                        transform: skewY(0deg)
+                    .img-g
+                        display: block
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                    .shw
+                        position: absolute
+                        top: 0
+                        left: 0
+                        z-index: 5
+                        width: 100%
+                        height: 0
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        transform-origin: bottom
+                        overflow: hidden
+                        transition: .6s ease all
+                        &::before
+                            position: absolute
+                            content: ''
+                            top: 0
+                            left: 0
+                            width: 100%
+                            height: 3px
+                            z-index: 6
+                            background: $orange
+                            transform: scaleX(0)
+                            transform-origin: center
+                            transition: transform .3s ease
+                        &::after
+                            position: absolute
+                            content: ''
+                            top: -100px
+                            left: -30px
+                            width: 130%
+                            height: 0%
+                            z-index: 0
+                            background: #000000b6
+                            transform: skewY(30deg)
+                            transform-origin: center
+                            transition: .6s ease all
+                        &:hover span
+                            opacity: 1
+                            background: $orange
+                        &:hover:before
+                            transform: scaleX(1)
+                        &:hover:after
+                            height: 130%
+                        span
+                            position: relative
+                            z-index: 6
+                            font-family: $f-koushan
+                            font-size: 18px
+                            display: block
+                            text-align: center
+                            width: 60px
+                            height: 60px
+                            line-height: 60px
+                            border-radius: 50%
+                            color: white
+                            background: #ff5429b7
+                            transition: .6s .3s ease all
+                            opacity: 0
+                            &:hover
+                                background: white
+                                color: $orange
+                            
+                .game-body
+                    padding: 20px 15px
+                    h2
+                        font-size: 20px
+                        font-family: $f-reggae
+                        margin-bottom: 15px
+                    .roll
+                        font-size: 17px
+                        font-family: $f-koushan
+                        margin: 10px 0
+                    .release
+                        font-size: 17px
+                        font-family: $f-koushan
+                        margin: 10px 0
+                    .cualify
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        margin: 15px auto
+                        h3
+                            font-size: 22px
+                            text-align: center
+                            margin-bottom: 10px
+                        .stars
+                            display: flex
+                            justify-content: center
+                            img
+                                display: block
+                                width: 25px
+                                margin: auto 8px
+                                object-fit: contain
+                    .offer
+                        display: flex
+                        align-items: center
+                        .price
+                            display: flex
+                            flex-direction: column
+                            h3
+                                font-family: $f-koushan
+                                font-size: 17px
+                            .cut
+                                text-decoration: line-through
+                                color: #ccc8c8
+                            span
+                                color: $orange
+                            .free
+                                color: #00af34
+                        .btn
+                            display: block
+                            text-align: center
+                            width: 140px
+                            margin-left: auto
+                            margin-right: 0
+                            font-size: 17px
+                            padding: 8px 15px
+                            color: white
+                            border: 2px solid white
+                            transition: .6s ease all
+                            &:hover
+                                background: $orange
+                                border: 2px solid $orange
+
+@media (min-width: 400px)
+    .games
+        .container
+            .main-text
+                h1              
+                    font-size: 3rem
+
+@media (min-width: 768px)
+    .games
+        padding: 50px 0px
+        .container
+            .main-text
+                h1
+                    font-size: 4rem
+                p
+                    display: block
+                    width: 100%
+                    max-width: 650px
+                    font-size: 19px
+                    margin: auto
+            .box-games
+                .game
+                    max-width: 300px
+                    .game-body
+                        padding: 15px
+                        h2
+                            font-size: 22px
+                        .roll
+                            font-size: 18px
+                        .release
+                            font-size: 18px
+                        .cualify
+                            h3
+                                font-size: 24px
+                        .offer
+                            .price
+                                h3
+                                    font-size: 18px
+
+@media (min-width: 992px)
+    .games
+        .container
+            .main-text
+                p
+
+                    font-size: 20px
+            .box-games
+                .game
+                    max-width: 230px
+                    .game-body
+                        padding: 10px
+                        h2
+                            font-size: 18px
+                        .roll
+                            font-size: 16px
+                        .release
+                            font-size: 16px
+                        .cualify
+                            h3
+                                font-size: 22px
+                        .offer
+                            .price
+                                h3
+                                    font-size: 16px
+                                span
+                                    font-size: 15px
+                            .btn
+                                width: 120px
+                                margin-left: auto
+                                margin-right: 0
+                                font-size: 15px
+                                padding: 8px 5px
+
+@media (min-width: 1050px)
+    .games
+        .container
+            .box-games
+                .game
+                    max-width: 250px
+                    .game-body
+                        padding: 15px 10px
+                        h2
+                            font-size: 20px
+                        .roll
+                            font-size: 18px
+                        .release
+                            font-size: 18px
+                        .cualify
+                            h3
+                                font-size: 24px
+                        .offer
+                            .price
+                                h3
+                                    font-size: 17px
+                                span
+                                    font-size: 17px
+                            .btn
+                                width: 140px
+                                margin-left: auto
+                                margin-right: 0
+                                font-size: 17px
+                                padding: 8px 10px
+
+@media (min-width: 1100px)
+    .games
+        .container
+            .box-games
+                .game
+                    max-width: 260px

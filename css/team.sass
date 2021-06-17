@@ -1,0 +1,107 @@
+.team
+    padding: 50px 10px
+    background: $dark2
+    .container
+        .main-text
+            margin-bottom: 15px
+            h1
+                position: relative
+                text-align: center
+                font-family: $f-koushan
+                font-size: 2rem
+                color: white
+                display: block
+                margin-bottom: 20px
+                &::before
+                    position: absolute
+                    content: ''
+                    bottom: -5px
+                    left: 50%
+                    width: 200px
+                    height: 5px
+                    transform: skewX(60deg) translate(-50%, 0)
+                    background: $orange
+                span
+                    font-family: $f-reggae
+                    color: $orange
+            p
+                font-family: $f-koushan
+                font-size: 17px
+                color: white
+                text-align: center
+                margin-bottom: 60px
+        .team-boxes
+            display: flex
+            align-items: center
+            flex-flow: row wrap
+            justify-content: center
+            .people
+                display: block
+                width: 100%
+                max-width: 260px
+                padding: 20px
+                margin: 15px auto
+                color: white
+                background: $dark
+                text-align: center
+                img
+                    width: 100%
+                    margin-bottom: 15px
+                h1
+                    font-family: $f-koushan
+                    font-size: 35px
+                    margin-bottom: 10px
+                p
+                    font-family: $f-condiment
+                    font-size: 25px
+                .social
+                    margin-top: 15px
+                    display: flex
+                    align-items: center
+                    justify-content: space-around
+                    img
+                        padding: 5px
+                        border-radius: 5px
+                        width: 35px
+                        object-fit: contain
+                        transition: .6s cubic-bezier(1,0,0,1) all
+                        &:hover
+                            background: white
+                            transform: translateY(-5px)
+
+@media (min-width: 400px)
+    .team
+        .container
+            .main-text
+                h1
+                    font-size: 3rem
+
+@media (min-width: 768px)
+    .team
+        padding: 50px 0px
+        .container
+            .main-text
+                h1
+                    font-size: 4rem
+                p
+                    display: block
+                    width: 100%
+                    max-width: 650px
+                    font-size: 19px
+                    margin: auto
+
+@media (min-width: 992px)
+    .team
+        .container
+            .main-text
+                p
+                    font-size: 20px
+            .team-boxes
+                .people
+                    margin: 20px 5px
+
+@media (min-width: 1080px)
+    .team
+        .container
+            .team-boxes
+                justify-content: space-between

@@ -1,0 +1,1976 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Reggae One";
+  background: #0d0e1b;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  z-index: 50;
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+          backdrop-filter: saturate(180%) blur(10px);
+  background: rgba(0, 0, 0, 0.9);
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+}
+
+.header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .container .logo {
+  font-family: "Kaushan Script";
+  color: #ff5329;
+  font-size: 4rem;
+}
+
+.header .container .logo span {
+  font-family: "Condiment";
+  color: white;
+  font-size: 2rem;
+}
+
+.header .container .nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 200;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 0;
+  height: 100vh;
+  min-height: 600px;
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+          backdrop-filter: saturate(180%) blur(10px);
+  background: rgba(0, 0, 0, 0.9);
+  -webkit-transition: 0.7s cubic-bezier(1, 0, 0, 1) all;
+  transition: 0.7s cubic-bezier(1, 0, 0, 1) all;
+  opacity: 0;
+}
+
+.header .container .nav .menu {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: auto;
+}
+
+.header .container .nav .menu li:hover ul {
+  height: 100%;
+}
+
+.header .container .nav .menu li a {
+  width: 100%;
+  display: block;
+  font-size: 17px;
+  color: white;
+  padding: 10px 15px;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+}
+
+.header .container .nav .menu li a:hover {
+  background: #ff5329;
+}
+
+.header .container .nav .menu li ul {
+  height: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #ff5329;
+  overflow: auto;
+  max-height: 150px;
+}
+
+.header .container .nav .menu li ul li a:hover {
+  color: #ff5329;
+  background: white;
+}
+
+.header .container .nav .menu .copy {
+  margin-top: 20px;
+  text-align: center;
+  display: block;
+  color: white;
+  padding: 10px;
+  font-family: "Reggae One";
+  font-size: 16px;
+}
+
+.header .container .nav .menu .copy span {
+  color: #ff5329;
+}
+
+.header .container .icon-menu {
+  position: relative;
+  z-index: 250;
+  width: 40px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+.header .container .icon-menu span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: white;
+}
+
+.header .container .icon-menu span:nth-child(1) {
+  -webkit-transition: .6s .5s ease all;
+  transition: .6s .5s ease all;
+}
+
+.header .container .icon-menu span:nth-child(2) {
+  -webkit-transition: 1s ease-in-out all;
+  transition: 1s ease-in-out all;
+}
+
+.header .container .icon-menu span:nth-child(3) {
+  -webkit-transition: .6s .5s ease all;
+  transition: .6s .5s ease all;
+}
+
+.header .container .active span:nth-child(1) {
+  -webkit-transform: translateY(15px) rotate(225deg);
+          transform: translateY(15px) rotate(225deg);
+}
+
+.header .container .active span:nth-child(2) {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+  opacity: 0;
+}
+
+.header .container .active span:nth-child(3) {
+  -webkit-transform: translateY(-11px) rotate(-225deg);
+          transform: translateY(-11px) rotate(-225deg);
+}
+
+.header .container .nav.active {
+  width: 300px;
+  opacity: 1;
+}
+
+@media (min-height: 600px) {
+  .header .container .nav .menu {
+    height: auto;
+  }
+  .header .container .nav .menu li ul {
+    max-height: 200px;
+  }
+  .header .container .nav .menu .copy {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 750px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.live {
+  margin-top: 100px;
+  min-height: 70vh;
+  padding: 100px 0;
+}
+
+.live .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.live .container .main-text {
+  margin-bottom: 15px;
+}
+
+.live .container .main-text h1 {
+  position: relative;
+  text-align: center;
+  font-family: "Kaushan Script";
+  font-size: 2rem;
+  color: white;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.live .container .main-text h1::before {
+  position: absolute;
+  content: '';
+  bottom: -5px;
+  left: 50%;
+  width: 200px;
+  height: 5px;
+  -webkit-transform: skewX(60deg) translate(-50%, 0);
+          transform: skewX(60deg) translate(-50%, 0);
+  background: #ff5329;
+}
+
+.live .container .main-text h1 span {
+  font-family: "Reggae One";
+  color: #ff5329;
+}
+
+.live .container .main-text p {
+  font-family: "Kaushan Script";
+  font-size: 17px;
+  color: white;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.live .container .content-vid {
+  width: 100%;
+  max-width: 700px;
+  margin: 50px 10px;
+}
+
+.live .container .content-vid form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.live .container .content-vid form .input {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  font-size: 15px;
+  font-family: "Reggae One";
+  padding: 12px;
+  border: 2px solid white;
+  color: #ff5329;
+  border: none;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.live .container .content-vid form .input:focus {
+  opacity: 1;
+}
+
+.live .container .content-vid form .input:valid {
+  background: #ff5329;
+  color: white;
+  opacity: 1;
+}
+
+.live .container .content-vid form .invalid {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  display: none;
+  color: #ff5329;
+  opacity: 0;
+  -webkit-transition: opacity .6s .5s ease;
+  transition: opacity .6s .5s ease;
+}
+
+.live .container .content-vid form .valid {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  display: none;
+  color: #00af34;
+  opacity: 0;
+  -webkit-transition: opacity .6s .5s ease;
+  transition: opacity .6s .5s ease;
+}
+
+.live .container .content-vid form .active {
+  display: block;
+  opacity: 1;
+}
+
+.live .container .content-vid form .btn {
+  display: block;
+  width: 120px;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  margin: 20px auto;
+  border: 2px solid white;
+  cursor: pointer;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.live .container .content-vid form .btn:hover {
+  background: #ff5329;
+  border: 2px solid #ff5329;
+}
+
+.live .container video {
+  display: block;
+  width: 95%;
+  max-width: 700px;
+  min-height: 300px;
+  height: 100%;
+  background: white;
+}
+
+@media (min-width: 400px) {
+  .live .container .main-text h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .live .container .content-vid form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .live .container .content-vid form .btn {
+    margin: 0;
+  }
+  .live .container .main-text h1 {
+    font-size: 4rem;
+  }
+  .live .container .main-text p {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    font-size: 19px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .live .container .main-text p {
+    font-size: 20px;
+  }
+}
+
+#slides .slides-container .container {
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#slides .slides-container .container .text {
+  width: 100%;
+  max-width: 700px;
+  color: white;
+  text-align: center;
+}
+
+#slides .slides-container .container .text h1 {
+  font-family: "Kaushan Script";
+  font-size: 1.5rem;
+}
+
+#slides .slides-container .container .text h1 span {
+  font-family: "Reggae One";
+  font-size: 2rem;
+  color: #ff5329;
+}
+
+#slides .slides-container .container .text p {
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+#slides .slides-container .container .text .btn {
+  font-family: "Kaushan Script";
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 2px solid white;
+  color: white;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+#slides .slides-container .container .text .btn:hover {
+  background: #ff5329;
+  border: 2px solid #ff5329;
+}
+
+@media (min-height: 600px) {
+  #slides .slides-container .container .text h1 {
+    font-size: 2rem;
+  }
+  #slides .slides-container .container .text h1 span {
+    font-size: 3rem;
+  }
+  #slides .slides-container .container .text p {
+    font-size: 17px;
+    line-height: 30px;
+  }
+  #slides .slides-container .container .text .btn {
+    font-size: 18px;
+    padding: 15px 25px;
+  }
+}
+
+@media (min-width: 350px) {
+  #slides .slides-container .container .text {
+    text-align: left;
+  }
+}
+
+@media (min-width: 576px) {
+  #slides .slides-container .container .text h1 {
+    font-size: 2.5rem;
+  }
+  #slides .slides-container .container .text h1 span {
+    font-size: 4rem;
+  }
+  #slides .slides-container .container .text p {
+    font-size: 18px;
+  }
+  #slides .slides-container .container .text .btn {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 600px) {
+  #slides .slides-container .container .text h1 {
+    font-size: 3rem;
+  }
+  #slides .slides-container .container .text h1 span {
+    font-size: 5rem;
+  }
+  #slides .slides-container .container .text p {
+    font-size: 20px;
+  }
+  #slides .slides-container .container .text .btn {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 992px) and (min-height: 600px) {
+  #slides .slides-container .container .text {
+    max-width: 900px;
+  }
+  #slides .slides-container .container .text h1 {
+    font-size: 3.5rem;
+  }
+  #slides .slides-container .container .text p {
+    font-size: 22px;
+  }
+}
+
+.vid {
+  padding: 50px 10px;
+}
+
+.vid .box {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  max-height: 400px;
+  margin: 50px auto;
+  overflow: hidden;
+  background: #ff5329;
+}
+
+.vid .box a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.vid .box a:hover span {
+  opacity: 1;
+  background: #ff5329;
+}
+
+.vid .box a span {
+  font-family: "Kaushan Script";
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  color: white;
+  background: #ff5429b7;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+  opacity: 0.7;
+}
+
+.vid .box a span:hover {
+  background: white;
+  color: #ff5329;
+}
+
+.vid .box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation: spaces 10s alternate infinite;
+          animation: spaces 10s alternate infinite;
+}
+
+@-webkit-keyframes spaces {
+  0% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+  }
+  100% {
+    -webkit-transform: rotate(2deg) scale(1.2);
+            transform: rotate(2deg) scale(1.2);
+  }
+}
+
+@keyframes spaces {
+  0% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+  }
+  100% {
+    -webkit-transform: rotate(2deg) scale(1.2);
+            transform: rotate(2deg) scale(1.2);
+  }
+}
+
+.games {
+  padding: 50px 10px;
+  background: #080811;
+}
+
+.games .container .main-text {
+  margin-bottom: 15px;
+}
+
+.games .container .main-text h1 {
+  position: relative;
+  text-align: center;
+  font-family: "Kaushan Script";
+  font-size: 2rem;
+  color: white;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.games .container .main-text h1::before {
+  position: absolute;
+  content: '';
+  bottom: -5px;
+  left: 50%;
+  width: 200px;
+  height: 5px;
+  -webkit-transform: skewX(60deg) translate(-50%, 0);
+          transform: skewX(60deg) translate(-50%, 0);
+  background: #ff5329;
+}
+
+.games .container .main-text h1 span {
+  font-family: "Reggae One";
+  color: #ff5329;
+}
+
+.games .container .main-text p {
+  font-family: "Kaushan Script";
+  font-size: 17px;
+  color: white;
+  text-align: center;
+}
+
+.games .container .box-games {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 40px auto;
+}
+
+.games .container .box-games .game {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #0d0e1b;
+  max-width: 400px;
+  color: white;
+  margin: 15px auto;
+  border-radius: 3px;
+}
+
+.games .container .box-games .game .c-img {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.games .container .box-games .game .c-img:hover .shw {
+  height: 120%;
+  -webkit-transform: skewY(0deg);
+          transform: skewY(0deg);
+}
+
+.games .container .box-games .game .c-img .img-g {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.games .container .box-games .game .c-img .shw {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  overflow: hidden;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.games .container .box-games .game .c-img .shw::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 6;
+  background: #ff5329;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.games .container .box-games .game .c-img .shw::after {
+  position: absolute;
+  content: '';
+  top: -100px;
+  left: -30px;
+  width: 130%;
+  height: 0%;
+  z-index: 0;
+  background: #000000b6;
+  -webkit-transform: skewY(30deg);
+          transform: skewY(30deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.games .container .box-games .game .c-img .shw:hover span {
+  opacity: 1;
+  background: #ff5329;
+}
+
+.games .container .box-games .game .c-img .shw:hover:before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.games .container .box-games .game .c-img .shw:hover:after {
+  height: 130%;
+}
+
+.games .container .box-games .game .c-img .shw span {
+  position: relative;
+  z-index: 6;
+  font-family: "Kaushan Script";
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  color: white;
+  background: #ff5429b7;
+  -webkit-transition: .6s .3s ease all;
+  transition: .6s .3s ease all;
+  opacity: 0;
+}
+
+.games .container .box-games .game .c-img .shw span:hover {
+  background: white;
+  color: #ff5329;
+}
+
+.games .container .box-games .game .game-body {
+  padding: 20px 15px;
+}
+
+.games .container .box-games .game .game-body h2 {
+  font-size: 20px;
+  font-family: "Reggae One";
+  margin-bottom: 15px;
+}
+
+.games .container .box-games .game .game-body .roll {
+  font-size: 17px;
+  font-family: "Kaushan Script";
+  margin: 10px 0;
+}
+
+.games .container .box-games .game .game-body .release {
+  font-size: 17px;
+  font-family: "Kaushan Script";
+  margin: 10px 0;
+}
+
+.games .container .box-games .game .game-body .cualify {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 15px auto;
+}
+
+.games .container .box-games .game .game-body .cualify h3 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.games .container .box-games .game .game-body .cualify .stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.games .container .box-games .game .game-body .cualify .stars img {
+  display: block;
+  width: 25px;
+  margin: auto 8px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.games .container .box-games .game .game-body .offer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.games .container .box-games .game .game-body .offer .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.games .container .box-games .game .game-body .offer .price h3 {
+  font-family: "Kaushan Script";
+  font-size: 17px;
+}
+
+.games .container .box-games .game .game-body .offer .price .cut {
+  text-decoration: line-through;
+  color: #ccc8c8;
+}
+
+.games .container .box-games .game .game-body .offer .price span {
+  color: #ff5329;
+}
+
+.games .container .box-games .game .game-body .offer .price .free {
+  color: #00af34;
+}
+
+.games .container .box-games .game .game-body .offer .btn {
+  display: block;
+  text-align: center;
+  width: 140px;
+  margin-left: auto;
+  margin-right: 0;
+  font-size: 17px;
+  padding: 8px 15px;
+  color: white;
+  border: 2px solid white;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.games .container .box-games .game .game-body .offer .btn:hover {
+  background: #ff5329;
+  border: 2px solid #ff5329;
+}
+
+@media (min-width: 400px) {
+  .games .container .main-text h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .games {
+    padding: 50px 0px;
+  }
+  .games .container .main-text h1 {
+    font-size: 4rem;
+  }
+  .games .container .main-text p {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    font-size: 19px;
+    margin: auto;
+  }
+  .games .container .box-games .game {
+    max-width: 300px;
+  }
+  .games .container .box-games .game .game-body {
+    padding: 15px;
+  }
+  .games .container .box-games .game .game-body h2 {
+    font-size: 22px;
+  }
+  .games .container .box-games .game .game-body .roll {
+    font-size: 18px;
+  }
+  .games .container .box-games .game .game-body .release {
+    font-size: 18px;
+  }
+  .games .container .box-games .game .game-body .cualify h3 {
+    font-size: 24px;
+  }
+  .games .container .box-games .game .game-body .offer .price h3 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .games .container .main-text p {
+    font-size: 20px;
+  }
+  .games .container .box-games .game {
+    max-width: 230px;
+  }
+  .games .container .box-games .game .game-body {
+    padding: 10px;
+  }
+  .games .container .box-games .game .game-body h2 {
+    font-size: 18px;
+  }
+  .games .container .box-games .game .game-body .roll {
+    font-size: 16px;
+  }
+  .games .container .box-games .game .game-body .release {
+    font-size: 16px;
+  }
+  .games .container .box-games .game .game-body .cualify h3 {
+    font-size: 22px;
+  }
+  .games .container .box-games .game .game-body .offer .price h3 {
+    font-size: 16px;
+  }
+  .games .container .box-games .game .game-body .offer .price span {
+    font-size: 15px;
+  }
+  .games .container .box-games .game .game-body .offer .btn {
+    width: 120px;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 15px;
+    padding: 8px 5px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .games .container .box-games .game {
+    max-width: 250px;
+  }
+  .games .container .box-games .game .game-body {
+    padding: 15px 10px;
+  }
+  .games .container .box-games .game .game-body h2 {
+    font-size: 20px;
+  }
+  .games .container .box-games .game .game-body .roll {
+    font-size: 18px;
+  }
+  .games .container .box-games .game .game-body .release {
+    font-size: 18px;
+  }
+  .games .container .box-games .game .game-body .cualify h3 {
+    font-size: 24px;
+  }
+  .games .container .box-games .game .game-body .offer .price h3 {
+    font-size: 17px;
+  }
+  .games .container .box-games .game .game-body .offer .price span {
+    font-size: 17px;
+  }
+  .games .container .box-games .game .game-body .offer .btn {
+    width: 140px;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 17px;
+    padding: 8px 10px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .games .container .box-games .game {
+    max-width: 260px;
+  }
+}
+
+.match {
+  padding: 50px 10px;
+  background: #0d0e1b;
+}
+
+.match .container .main-text {
+  margin-bottom: 15px;
+}
+
+.match .container .main-text h1 {
+  position: relative;
+  text-align: center;
+  font-family: "Kaushan Script";
+  font-size: 2rem;
+  color: white;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.match .container .main-text h1::before {
+  position: absolute;
+  content: '';
+  bottom: -5px;
+  left: 50%;
+  width: 200px;
+  height: 5px;
+  -webkit-transform: skewX(60deg) translate(-50%, 0);
+          transform: skewX(60deg) translate(-50%, 0);
+  background: #ff5329;
+}
+
+.match .container .main-text h1 span {
+  font-family: "Reggae One";
+  color: #ff5329;
+}
+
+.match .container .main-text p {
+  font-family: "Kaushan Script";
+  font-size: 17px;
+  color: white;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.match .container .match-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.match .container .match-content .oponent img {
+  display: block;
+  width: 100%;
+  padding: 25px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background: #080811;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.match .container .match-content .vs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 15px auto;
+}
+
+.match .container .match-content .vs .counter {
+  display: block;
+  width: 100%;
+  margin: 15px auto;
+}
+
+.match .container .match-content .vs .counter p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.match .container .match-content .vs .counter p b {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+}
+
+.match .container .match-content .vs .counter p span {
+  padding: 8px;
+  margin: 5px;
+  background: #080811;
+  color: #ff5329;
+  border-radius: 5px;
+}
+
+.match .container .match-content .vs .vs-img {
+  display: block;
+  width: 160px;
+  margin: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.match .container .match-content .vs .btn {
+  display: inline-block;
+  font-size: 18px;
+  margin: 10px auto;
+  padding: 10px;
+  color: white;
+  border: 2px solid white;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.match .container .match-content .vs .btn:hover {
+  background: #ff5329;
+  border: 2px solid #ff5329;
+}
+
+@media (min-width: 400px) {
+  .match .container .main-text h1 {
+    font-size: 3rem;
+  }
+  .match .container .match-content:hover .oponent .op1, .match .container .match-content:hover .oponent .op2 {
+    -webkit-transform: perspective(600px) rotateY(0deg);
+            transform: perspective(600px) rotateY(0deg);
+  }
+  .match .container .match-content .oponent .op1 {
+    -webkit-transform: perspective(600px) rotateY(30deg);
+            transform: perspective(600px) rotateY(30deg);
+  }
+  .match .container .match-content .oponent .op2 {
+    -webkit-transform: perspective(600px) rotateY(-30deg);
+            transform: perspective(600px) rotateY(-30deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .match {
+    padding: 50px 0px;
+  }
+  .match .container .main-text h1 {
+    font-size: 4rem;
+  }
+  .match .container .main-text p {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    font-size: 19px;
+    margin: auto;
+    margin-bottom: 60px;
+  }
+  .match .container .match-content .vs .counter p {
+    font-size: 18px;
+  }
+  .match .container .match-content .vs .counter p b {
+    font-size: 18px;
+  }
+  .match .container .match-content .vs .counter p span {
+    padding: 12px;
+  }
+}
+
+@media (min-width: 992px) {
+  .match .container .main-text p {
+    font-size: 20px;
+  }
+  .match .container .match-content {
+    max-width: unset;
+  }
+}
+
+.promo {
+  background-image: url(../img/promo-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.promo .container {
+  padding: 200px 10px;
+  text-align: center;
+  color: white;
+}
+
+.promo .container h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.promo .container p {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 35px;
+}
+
+@media (min-width: 400px) {
+  .promo .container h1 {
+    font-size: 3rem;
+  }
+  .promo .container p {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .promo .container h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .promo .container {
+    text-align: left;
+  }
+  .promo .container h1 {
+    font-size: 4rem;
+  }
+  .promo .container p {
+    max-width: 700px;
+    font-size: 20px;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+.team {
+  padding: 50px 10px;
+  background: #080811;
+}
+
+.team .container .main-text {
+  margin-bottom: 15px;
+}
+
+.team .container .main-text h1 {
+  position: relative;
+  text-align: center;
+  font-family: "Kaushan Script";
+  font-size: 2rem;
+  color: white;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.team .container .main-text h1::before {
+  position: absolute;
+  content: '';
+  bottom: -5px;
+  left: 50%;
+  width: 200px;
+  height: 5px;
+  -webkit-transform: skewX(60deg) translate(-50%, 0);
+          transform: skewX(60deg) translate(-50%, 0);
+  background: #ff5329;
+}
+
+.team .container .main-text h1 span {
+  font-family: "Reggae One";
+  color: #ff5329;
+}
+
+.team .container .main-text p {
+  font-family: "Kaushan Script";
+  font-size: 17px;
+  color: white;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.team .container .team-boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.team .container .team-boxes .people {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  padding: 20px;
+  margin: 15px auto;
+  color: white;
+  background: #0d0e1b;
+  text-align: center;
+}
+
+.team .container .team-boxes .people img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.team .container .team-boxes .people h1 {
+  font-family: "Kaushan Script";
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.team .container .team-boxes .people p {
+  font-family: "Condiment";
+  font-size: 25px;
+}
+
+.team .container .team-boxes .people .social {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.team .container .team-boxes .people .social img {
+  padding: 5px;
+  border-radius: 5px;
+  width: 35px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transition: 0.6s cubic-bezier(1, 0, 0, 1) all;
+  transition: 0.6s cubic-bezier(1, 0, 0, 1) all;
+}
+
+.team .container .team-boxes .people .social img:hover {
+  background: white;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+@media (min-width: 400px) {
+  .team .container .main-text h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .team {
+    padding: 50px 0px;
+  }
+  .team .container .main-text h1 {
+    font-size: 4rem;
+  }
+  .team .container .main-text p {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    font-size: 19px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .team .container .main-text p {
+    font-size: 20px;
+  }
+  .team .container .team-boxes .people {
+    margin: 20px 5px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .team .container .team-boxes {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.releases {
+  padding: 100px 10px;
+  background: rgba(8, 3, 37, 0.54) none repeat scroll 0 0;
+}
+
+.releases .content-text {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+.releases .content-text span {
+  font-family: "Kaushan Script";
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.releases .content-text h1 {
+  font-family: "Reggae One";
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.releases .content-text h2 {
+  font-family: "Reggae One";
+  font-size: 1rem;
+  margin-bottom: 35px;
+}
+
+.releases .content-text .btn {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: auto;
+  font-size: 15px;
+  padding: 12px 15px;
+  color: white;
+  border: 2px solid white;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.releases .content-text .btn:hover {
+  background: #ff5329;
+  border: 2px solid #ff5329;
+}
+
+@media (min-width: 400px) {
+  .releases .content-text h1 {
+    font-size: 2rem;
+  }
+  .releases .content-text .btn {
+    max-width: 220px;
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 450px) {
+  .releases {
+    padding: 100px 0px;
+  }
+  .releases .content-text span {
+    font-size: 28px;
+  }
+  .releases .content-text h2 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .releases .content-text span {
+    font-size: 30px;
+  }
+  .releases .content-text h1 {
+    font-size: 2.5rem;
+  }
+  .releases .content-text h2 {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 992px) {
+  .releases .content-text {
+    max-width: 700px;
+  }
+  .releases .content-text h1 {
+    font-size: 3.5rem;
+  }
+  .releases .content-text h2 {
+    font-size: 35px;
+  }
+  .releases .content-text .btn {
+    max-width: 240px;
+    font-size: 20px;
+  }
+}
+
+.blog {
+  padding: 60px 10px;
+  background: #0d0e1b;
+}
+
+.blog .container .main-text {
+  margin-bottom: 15px;
+}
+
+.blog .container .main-text h1 {
+  position: relative;
+  text-align: center;
+  font-family: "Kaushan Script";
+  font-size: 2rem;
+  color: white;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.blog .container .main-text h1::before {
+  position: absolute;
+  content: '';
+  bottom: -5px;
+  left: 50%;
+  width: 200px;
+  height: 5px;
+  -webkit-transform: skewX(60deg) translate(-50%, 0);
+          transform: skewX(60deg) translate(-50%, 0);
+  background: #ff5329;
+}
+
+.blog .container .main-text h1 span {
+  font-family: "Reggae One";
+  color: #ff5329;
+}
+
+.blog .container .main-text p {
+  font-family: "Kaushan Script";
+  font-size: 17px;
+  color: white;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.blog .container .blog-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.blog .container .blog-content .blog-item {
+  width: 100%;
+  max-width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px auto;
+}
+
+.blog .container .blog-content .blog-item:hover .blog-img img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.blog .container .blog-content .blog-item:hover h1 {
+  color: #ff5329;
+}
+
+.blog .container .blog-content .blog-item .blog-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.blog .container .blog-content .blog-item .blog-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.blog .container .blog-content .blog-item a {
+  width: 120px;
+  text-align: center;
+  display: block;
+  font-family: "Kaushan Script";
+  font-size: 18px;
+  margin: 15px 0;
+  padding: 8px 10px;
+  border-radius: 20px;
+  color: white;
+  background: #ff5329;
+  -webkit-transition: .7s ease all;
+  transition: .7s ease all;
+}
+
+.blog .container .blog-content .blog-item a:hover {
+  background: #fb9016;
+}
+
+.blog .container .blog-content .blog-item h1 {
+  font-family: "Reggae One";
+  font-size: 25px;
+  color: white;
+  margin-bottom: 15px;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.blog .container .blog-content .blog-item p {
+  font-family: "Kaushan Script";
+  font-size: 18px;
+  color: #c2c2c2be;
+  line-height: 35px;
+}
+
+.blog .container .blog-content .blog-item hr {
+  display: block;
+  border: 1px dashed white;
+  margin: 15px 0;
+}
+
+.blog .container .blog-content .blog-item .date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.blog .container .blog-content .blog-item .date span {
+  font-family: "Kaushan Script";
+  font-size: 18px;
+  margin: 5px 10px;
+  color: white;
+}
+
+.blog .container .blog-content .cbtn {
+  width: 100%;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.blog .container .blog-content .cbtn .btn {
+  font-family: "Reggae One";
+  font-size: 18px;
+  color: white;
+  padding: 8px 12px;
+  border: 2px solid white;
+  text-align: center;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.blog .container .blog-content .cbtn .btn:hover {
+  background: #ff5329;
+  border: 2px solid #ff5329;
+}
+
+.blog .container .blog-content.blog2 {
+  display: none;
+}
+
+@media (min-width: 400px) {
+  .blog .container .main-text h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .blog {
+    padding: 50px 0px;
+  }
+  .blog .container .main-text h1 {
+    font-size: 4rem;
+  }
+  .blog .container .main-text p {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    font-size: 19px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .blog .container .main-text p {
+    font-size: 20px;
+  }
+  .blog .container .blog-content.blog1 {
+    display: none !important;
+  }
+  .blog .container .blog-content.blog2 {
+    margin-top: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .blog .container .blog-content.blog2 .blog-item:nth-child(1) {
+    max-width: 450px;
+    margin: 0;
+  }
+  .blog .container .blog-content.blog2 .blog-item:nth-child(1) .main-blog-img {
+    height: 300px;
+  }
+  .blog .container .blog-content.blog2 .blog-aside {
+    margin-left: 20px;
+  }
+  .blog .container .blog-content.blog2 .blog-aside .blog-item {
+    width: 400px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    background: #080811;
+    border-radius: 20px;
+  }
+  .blog .container .blog-content.blog2 .blog-aside .blog-item:hover .blog-img img {
+    -o-object-position: center;
+       object-position: center;
+  }
+  .blog .container .blog-content.blog2 .blog-aside .blog-item .blog-img {
+    width: 35%;
+    height: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .blog .container .blog-content.blog2 .blog-aside .blog-item .blog-img img {
+    display: block;
+    width: 260px;
+    height: 260px;
+    -o-object-fit: none;
+       object-fit: none;
+    -o-object-position: left;
+       object-position: left;
+    -webkit-transition: .6s ease all;
+    transition: .6s ease all;
+  }
+  .blog .container .blog-content.blog2 .blog-aside .blog-item .text {
+    width: 65%;
+    padding: 15px;
+  }
+  .blog .container .blog-content.blog2 .blog-aside .blog-item .text h1 {
+    font-size: 18px;
+  }
+  .blog .container .blog-content.blog2 .blog-aside .blog-item .text .date span {
+    margin: 5px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .blog .container .blog-content.blog2 .blog-item:nth-child(1) {
+    max-width: 550px;
+  }
+  .blog .container .blog-content.blog2 .blog-item:nth-child(1) .main-blog-img {
+    height: 400px;
+  }
+  .blog .container .blog-content.blog2 .blog-aside {
+    margin-left: 20px;
+  }
+  .blog .container .blog-content.blog2 .blog-aside .blog-item {
+    width: 450px;
+  }
+}
+
+.footer {
+  padding: 50px 10px;
+  background: #080811;
+}
+
+.footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.footer .container .col {
+  display: block;
+  width: 100%;
+  margin: 15px auto;
+}
+
+.footer .container .col h1 {
+  font-family: "Kaushan Script";
+  font-size: 25px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer .container .col p {
+  font-family: "Reggae One";
+  font-size: 16px;
+  color: #c2c2c2be;
+}
+
+.footer .container .col a {
+  display: block;
+  font-family: "Reggae One";
+  font-size: 16px;
+  margin: 8px 0;
+  color: #c2c2c2be;
+  -webkit-transition: .6s ease all;
+  transition: .6s ease all;
+}
+
+.footer .container .col a:hover {
+  color: white;
+}
+
+.footer .container .col b {
+  display: block;
+  font-family: "Reggae One";
+  font-size: 16px;
+  color: white;
+  margin: 15px 0 auto;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 50px 0;
+  }
+  .footer .container {
+    max-width: 1100px;
+  }
+  .footer .container .col {
+    width: 90%;
+  }
+  .footer .container .col:nth-child(2) {
+    width: 25%;
+  }
+  .footer .container .col:nth-child(3) {
+    width: 25%;
+  }
+  .footer .container .col:nth-child(4) {
+    width: 25%;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer .container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footer .container .col {
+    width: 30%;
+  }
+  .footer .container .col:nth-child(2) {
+    width: 15%;
+  }
+  .footer .container .col:nth-child(3) {
+    width: 15%;
+  }
+  .footer .container .col:nth-child(4) {
+    width: 15%;
+  }
+}

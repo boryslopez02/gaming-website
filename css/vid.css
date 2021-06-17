@@ -1,0 +1,46 @@
+.vid {
+  padding: 50px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.vid .box {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  max-height: 400px;
+  margin: 50px auto;
+}
+
+.vid .box .floating {
+  overflow: hidden;
+  -webkit-animation: floating 2s alternate infinite;
+          animation: floating 2s alternate infinite;
+  background: red;
+}
+
+@-webkit-keyframes floating {
+  0% {
+    transfrom: rotate(0) scale(1);
+  }
+  100% {
+    transfrom: rotate(35deg) scale(1.2);
+  }
+}
+
+@keyframes floating {
+  0% {
+    transfrom: rotate(0) scale(1);
+  }
+  100% {
+    transfrom: rotate(35deg) scale(1.2);
+  }
+}

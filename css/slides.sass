@@ -1,0 +1,98 @@
+#slides
+    .slides-container
+        .container
+            width: 100%
+            height: 100vh
+            padding: 10px
+            display: flex
+            align-items: center
+            .text
+                width: 100%
+                max-width: 700px
+                color: white
+                text-align: center
+                h1
+                    font-family: $f-koushan
+                    font-size: 1.5rem
+                    span
+                        font-family: $f-reggae
+                        font-size: 2rem
+                        color: $orange
+                p
+                    width: 100%
+                    max-width: 400px
+                    font-size: 16px
+                    margin: 20px 0
+                .btn
+                    font-family: $f-koushan
+                    display: inline-block
+                    font-size: 16px
+                    padding: 10px 20px
+                    border: 2px solid white
+                    color: white
+                    transition: .6s ease all
+                    &:hover
+                        background: $orange
+                        border: 2px solid $orange
+
+@media (min-height: 600px)
+    #slides
+        .slides-container
+            .container
+                .text
+                    h1
+                        font-size: 2rem
+                        span
+                            font-size: 3rem
+                    p
+                        font-size: 17px
+                        line-height: 30px
+                    .btn
+                        font-size: 18px
+                        padding: 15px 25px
+
+@media (min-width: 350px)
+    #slides
+        .slides-container
+            .container
+                .text
+                    text-align: left
+
+@media (min-width: 576px) 
+    #slides
+        .slides-container
+            .container
+                .text
+                    h1
+                        font-size: 2.5rem
+                        span
+                            font-size: 4rem
+                    p
+                        font-size: 18px
+                    .btn
+                        font-size: 20px
+
+@media (min-width: 768px) and (min-height: 600px)
+    #slides
+        .slides-container
+            .container
+                .text
+                    h1
+                        font-size: 3rem
+                        span
+                            font-size: 5rem
+                    p
+                        font-size: 20px
+                    .btn
+                        font-size: 22px
+
+@media (min-width: 992px) and (min-height: 600px)
+    #slides
+        .slides-container
+            .container
+                .text
+                    max-width: 900px
+                    h1
+                        font-size: 3.5rem
+                    p
+                        font-size: 22px
